@@ -6,7 +6,7 @@ namespace Ucu.Poo.GameOfLife
 {
     class Engine
     {
-        public Board NewGeneration(Board board)
+        public static Board NewGeneration(Board board)
         {
             /* No es necesario utilizarlo, si se pasa como parametro el 
             bool[,] gameBoard = board.matriz;

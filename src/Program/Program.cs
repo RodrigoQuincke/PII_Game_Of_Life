@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace Ucu.Poo.GameOfLife
 {
@@ -6,7 +7,14 @@ namespace Ucu.Poo.GameOfLife
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            BoardImporter importer = new BoardImporter();
+            BoardPrinter print = new BoardPrinter();
+            Board boardMain = importer.FileReader();
+            while(true)
+            {
+                print.Print(boardMain);
+                Thread.Sleep(300);
+            }
         }
     }
 }
