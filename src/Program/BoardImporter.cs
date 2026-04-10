@@ -5,7 +5,7 @@ namespace Ucu.Poo.GameOfLife
 {
     public class BoardImporter
     {
-        public bool[,] FileReader()
+        public Board FileReader()
         {
             string url = "board.txt";
             string content = File.ReadAllText(url);
@@ -21,7 +21,8 @@ namespace Ucu.Poo.GameOfLife
                     }
                 }
             }
-            return board;
+            Board boardMain = new Board(board, board.GetLength (0), board.GetLength (0));
+            return boardMain;
         }
     }
 }

@@ -14,50 +14,51 @@ namespace Ucu.Poo.GameOfLife
             int boardHeight = board.height;
             */
 
-            Board cloneBoard = new Board(); // pasar parametros para creacion, ancho y alto
+            bool[,] cloneBoard = new bool[board.Width, board.Height];
 
-            for (int x = 0; x < board.width; x++)
+            for (int x = 0; x < board.Width; x++)
             {
-                for (int y = 0; y < board.height; y++)
+                for (int y = 0; y < board.Height; y++)
                 {
                     int aliveNeighbors = 0;
                     for (int i = x-1; i<=x+1;i++)
                     {
                         for (int j = y-1;j<=y+1;j++)
                         {
-                            if(i>=0 && i<board.width && j>=0 && j < board.height && board.matriz[i,j])
+                            if(i>=0 && i<board.Width && j>=0 && j < board.Height && board.Matrix[i,j])
                             {
                                 aliveNeighbors++;
                             }
                         }
                     }
-                    if(board.matriz[x,y])
+                    if(board.Matrix[x,y])
                     {
                         aliveNeighbors--;
                     }
-                    if (board.matriz[x,y] && aliveNeighbors < 2)
+                    if (board.Matrix[x,y] && aliveNeighbors < 2)
                     {
                         //Celula muere por baja población
-                        cloneBoard.matriz[x,y] = false;
+                        cloneBoard[x,y] = false;
                     }
-                    else if (board.matriz[x,y] && aliveNeighbors > 3)
+                    else if (board.Matrix[x,y] && aliveNeighbors > 3)
                     {
                         //Celula muere por sobrepoblación
-                        cloneBoard.matriz[x,y] = false;
+                        cloneBoard[x,y] = false;
                     }
-                    else if (!board.matriz[x,y] && aliveNeighbors == 3)
+                    else if (!board.Matrix[x,y] && aliveNeighbors == 3)
                     {
                         //Celula nace por reproducción
-                        cloneBoard.matriz[x,y] = true;
+                        cloneBoard[x,y] = true;
                     }
                     else
                     {
                         //Celula mantiene el estado que tenía
-                        cloneBoard.matriz[x,y] = board.matriz[x,y];
+                        cloneBoard[x,y] = board.Matrix[x,y];
                     }
                 }
             }
-            return board.matriz = cloneBoard.matriz;
+            board.Matrix = cloneBoard;
+            return board;
         }
         
 
