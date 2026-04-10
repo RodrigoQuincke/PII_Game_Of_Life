@@ -19,7 +19,7 @@ namespace Ucu.Poo.GameOfLife
                 for (int x = 0; x < board.Width; x++)
                 {
                     // Le preguntamos al tablero si la célula en esa posición está viva
-                    if (board.GetCell(x, y).IsAlive) 
+                    if (board.Matrix[x,y] == true) 
                     {
                         s.Append("|x|");
                     }
@@ -31,6 +31,7 @@ namespace Ucu.Poo.GameOfLife
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
+            Engine.NewGeneration(board);
         }
     }
 }
