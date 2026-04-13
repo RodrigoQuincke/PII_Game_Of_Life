@@ -31,7 +31,6 @@ namespace Ucu.Poo.GameOfLife
                 s.Append("\n");
             }
             Console.WriteLine(s.ToString());
-            Engine.NewGeneration(board);
         }
     }
 }

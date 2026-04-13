@@ -13,6 +13,7 @@ namespace Ucu.Poo.GameOfLife
             while(true)
             {
                 print.Print(boardMain);
+                Engine.NewGeneration(boardMain);
                 Thread.Sleep(300);
             }
         }

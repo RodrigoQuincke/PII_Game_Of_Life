@@ -8,7 +8,7 @@ namespace Ucu.Poo.GameOfLife
         public Board FileReader()
         {
             string basePath = AppContext.BaseDirectory;
-            string url = "../../assets/board.txt";
+            string url = "board.txt";
             string content = File.ReadAllText(url);
             string[] contentLines = content.Split('\n');
             bool[,] board = new bool[contentLines.Length, contentLines[0].Length];
@@ -22,7 +22,7 @@ namespace Ucu.Poo.GameOfLife
                     }
                 }
             }
-            Board boardMain = new Board(board, board.GetLength (0), board.GetLength (0));
+            Board boardMain = new Board(board);
             return boardMain;
         }
     }

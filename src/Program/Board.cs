@@ -5,14 +5,17 @@ namespace Ucu.Poo.GameOfLife
     public class Board
     {
         public bool[,] Matrix { get; set; }
-        public int Width { get; set; }
-        public int Height { get; set; }
-        public Board(bool[,] matrix, int width, int height)
+        public int Width
         {
-            
-            this.Matrix = matrix;
-            this.Width = width;
-            this.Height = height;
+            get { return Matrix.GetLength(0); }
+        }
+        public int Height
+        {
+            get { return Matrix.GetLength(1); }
+        }
+        public Board(bool[,] matrix)
+        {
+            Matrix = matrix;
         }
     }
 }
