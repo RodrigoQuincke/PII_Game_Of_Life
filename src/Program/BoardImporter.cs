@@ -3,6 +3,9 @@ using System.IO;
 
 namespace Ucu.Poo.GameOfLife
 {
+    // EXPERT: Es la clase experta en interpretar y transformar un archivo de texto externo en una matriz de booleanos que el sistema pueda entender.
+    // SRP: Su única responsabilidad es la carga de datos. 
+    
     public class BoardImporter
     {
         public Board FileReader()

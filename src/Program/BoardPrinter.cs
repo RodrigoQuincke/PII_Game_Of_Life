@@ -3,10 +3,12 @@ using System.Text;
 
 namespace Ucu.Poo.GameOfLife
 {
+    // EXPERT: Es la clase experta en conocer cómo hay que representar el tablero e imprimirlo por consola.
+    // SRP: Esta clase tiene una única responsabilidad: imprimir el tablero en la consola.
+
     public class BoardPrinter
     {
-        // SRP: Esta clase tiene una única responsabilidad: imprimir el tablero en la consola.
-        // EXPERT: Es la clase experta en conocer cómo hay que representar el tablero e imprimirlo por consola.
+
         
         public void Print(Board board) // Recibe el tablero (Board).
         {

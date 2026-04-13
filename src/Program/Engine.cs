@@ -4,6 +4,9 @@ using System.Security.Principal;
 
 namespace Ucu.Poo.GameOfLife
 {
+    // EXPERT: Esta es la clase EXPERTA en las reglas del Juego. 
+    // SRP: Su responsabilidad es calcular cómo evolucionan las celulas de una generación a la siguiente.
+    
     class Engine
     {
         public static Board NewGeneration(Board board)

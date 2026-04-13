@@ -3,6 +3,9 @@ using System.Threading;
 
 namespace Ucu.Poo.GameOfLife
 {
+    // EXPERT: Esta clase funciona como el centro de control del juego. 
+    // SRP: Su única responsabilidad es coordinar el flujo principal: instanciar los objetos, cargar el tablero inicial y mantener el ciclo de juego.
+    
     class Program
     {
         static void Main(string[] args)
